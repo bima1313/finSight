@@ -1,6 +1,6 @@
-# Expense Tracker
+# FinSight
 
-A simple and efficient mobile application built to help manage personal finances.
+A high-performance, simple and efficient android application built to help manage personal finances.
 
 ## 🚀 Technologies Used
 
