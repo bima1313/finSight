@@ -1,5 +1,5 @@
-import 'package:expense_tracker/features/home/domain/entities/note.dart';
-import 'package:expense_tracker/shared/utils/datetime_parser.dart';
+import 'package:fin_sight/features/home/domain/entities/note.dart';
+import 'package:fin_sight/shared/utils/datetime_parser.dart';
 
 class NoteModel extends Note {
   const NoteModel({

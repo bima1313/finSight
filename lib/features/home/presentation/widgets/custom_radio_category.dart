@@ -1,7 +1,7 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/features/home/presentation/getx/controllers/category_selected_controller.dart';
-import 'package:expense_tracker/features/home/presentation/widgets/category_item.dart';
-import 'package:expense_tracker/shared/domain/entities/category_type.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/features/home/presentation/getx/controllers/category_selected_controller.dart';
+import 'package:fin_sight/features/home/presentation/widgets/category_item.dart';
+import 'package:fin_sight/shared/domain/entities/category_type.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

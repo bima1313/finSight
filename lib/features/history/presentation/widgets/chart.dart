@@ -1,7 +1,7 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/core/themes/app_theme.dart';
-import 'package:expense_tracker/features/history/domain/entities/history.dart';
-import 'package:expense_tracker/features/history/presentation/utils/month_parser.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/core/themes/app_theme.dart';
+import 'package:fin_sight/features/history/domain/entities/history.dart';
+import 'package:fin_sight/features/history/presentation/utils/month_parser.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';

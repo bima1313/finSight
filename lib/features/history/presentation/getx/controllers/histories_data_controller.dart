@@ -1,5 +1,5 @@
-import 'package:expense_tracker/features/history/domain/entities/history.dart';
-import 'package:expense_tracker/features/history/domain/usecases/get_histories.dart';
+import 'package:fin_sight/features/history/domain/entities/history.dart';
+import 'package:fin_sight/features/history/domain/usecases/get_histories.dart';
 import 'package:get/get.dart';
 
 class HistoriesDataController extends GetxController

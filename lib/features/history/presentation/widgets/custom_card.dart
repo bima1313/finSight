@@ -1,6 +1,6 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/core/themes/app_theme.dart';
-import 'package:expense_tracker/features/history/presentation/utils/change_rate_icon.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/core/themes/app_theme.dart';
+import 'package:fin_sight/features/history/presentation/utils/change_rate_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:intl/intl.dart';

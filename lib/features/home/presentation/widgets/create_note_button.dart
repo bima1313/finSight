@@ -1,5 +1,5 @@
-import 'package:expense_tracker/features/home/presentation/getx/controllers/category_selected_controller.dart';
-import 'package:expense_tracker/features/home/presentation/getx/controllers/create_note_controller.dart';
+import 'package:fin_sight/features/home/presentation/getx/controllers/category_selected_controller.dart';
+import 'package:fin_sight/features/home/presentation/getx/controllers/create_note_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,6 +1,6 @@
-import 'package:expense_tracker/core/constants/dummy_data.dart';
-import 'package:expense_tracker/core/errors/exceptions.dart';
-import 'package:expense_tracker/features/home/data/models/note_model.dart';
+import 'package:fin_sight/core/constants/dummy_data.dart';
+import 'package:fin_sight/core/errors/exceptions.dart';
+import 'package:fin_sight/features/home/data/models/note_model.dart';
 import 'package:flutter/foundation.dart';
 
 @immutable

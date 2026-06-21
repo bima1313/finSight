@@ -1,6 +1,6 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/core/themes/app_theme.dart';
-import 'package:expense_tracker/features/home/presentation/utils/currency_input_formatter.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/core/themes/app_theme.dart';
+import 'package:fin_sight/features/home/presentation/utils/currency_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 

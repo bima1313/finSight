@@ -1,5 +1,5 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/core/themes/app_typography.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/core/themes/app_typography.dart';
 import 'package:flutter/material.dart';
 
 @immutable

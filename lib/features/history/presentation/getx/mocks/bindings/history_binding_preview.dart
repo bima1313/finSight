@@ -1,12 +1,12 @@
-import 'package:expense_tracker/features/history/data/mocks/datasource/history_local_data_source_preview.dart';
-import 'package:expense_tracker/features/history/data/mocks/repositories/history_repository_impl_preview.dart';
-import 'package:expense_tracker/features/history/domain/repositories/history_repository.dart';
-import 'package:expense_tracker/features/history/domain/usecases/get_histories.dart';
-import 'package:expense_tracker/features/history/domain/usecases/get_total.dart';
-import 'package:expense_tracker/features/history/domain/usecases/get_years.dart';
-import 'package:expense_tracker/features/history/presentation/getx/controllers/get_total_controller.dart';
-import 'package:expense_tracker/features/history/presentation/getx/controllers/get_years_controller.dart';
-import 'package:expense_tracker/features/history/presentation/getx/controllers/histories_data_controller.dart';
+import 'package:fin_sight/features/history/data/mocks/datasource/history_local_data_source_preview.dart';
+import 'package:fin_sight/features/history/data/mocks/repositories/history_repository_impl_preview.dart';
+import 'package:fin_sight/features/history/domain/repositories/history_repository.dart';
+import 'package:fin_sight/features/history/domain/usecases/get_histories.dart';
+import 'package:fin_sight/features/history/domain/usecases/get_total.dart';
+import 'package:fin_sight/features/history/domain/usecases/get_years.dart';
+import 'package:fin_sight/features/history/presentation/getx/controllers/get_total_controller.dart';
+import 'package:fin_sight/features/history/presentation/getx/controllers/get_years_controller.dart';
+import 'package:fin_sight/features/history/presentation/getx/controllers/histories_data_controller.dart';
 import 'package:get/get.dart';
 
 class HistoryBindingPreview extends Bindings {

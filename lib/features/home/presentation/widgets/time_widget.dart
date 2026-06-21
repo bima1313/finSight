@@ -1,6 +1,6 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/features/home/presentation/getx/controllers/real_time_controller.dart';
-import 'package:expense_tracker/features/home/presentation/getx/mocks/bindings/home_binding_preview.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/features/home/presentation/getx/controllers/real_time_controller.dart';
+import 'package:fin_sight/features/home/presentation/getx/mocks/bindings/home_binding_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:get/get.dart';

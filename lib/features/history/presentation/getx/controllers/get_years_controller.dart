@@ -1,4 +1,4 @@
-import 'package:expense_tracker/features/history/domain/usecases/get_years.dart';
+import 'package:fin_sight/features/history/domain/usecases/get_years.dart';
 import 'package:get/get.dart';
 
 class GetYearsController extends GetxController {

@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:expense_tracker/core/themes/app_theme.dart';
-import 'package:expense_tracker/features/splash/presentation/widgets/linear_loading_widget.dart';
-import 'package:expense_tracker/features/splash/presentation/widgets/splash_screen_content.dart';
+import 'package:fin_sight/core/themes/app_theme.dart';
+import 'package:fin_sight/features/splash/presentation/widgets/linear_loading_widget.dart';
+import 'package:fin_sight/features/splash/presentation/widgets/splash_screen_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:get/get.dart';

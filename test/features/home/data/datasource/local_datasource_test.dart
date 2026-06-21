@@ -1,6 +1,6 @@
-import 'package:expense_tracker/core/databases/sqlite.dart';
-import 'package:expense_tracker/features/home/data/datasource/note_local_data_source.dart';
-import 'package:expense_tracker/features/home/data/models/note_model.dart';
+import 'package:fin_sight/core/databases/sqlite.dart';
+import 'package:fin_sight/features/home/data/datasource/note_local_data_source.dart';
+import 'package:fin_sight/features/home/data/models/note_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 

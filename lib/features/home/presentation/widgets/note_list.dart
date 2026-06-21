@@ -1,9 +1,9 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/core/themes/app_theme.dart';
-import 'package:expense_tracker/features/home/presentation/getx/controllers/get_notes_controller.dart';
-import 'package:expense_tracker/features/home/presentation/getx/mocks/bindings/home_binding_preview.dart';
-import 'package:expense_tracker/features/home/presentation/widgets/note_item.dart';
-import 'package:expense_tracker/shared/domain/entities/category_type.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/core/themes/app_theme.dart';
+import 'package:fin_sight/features/home/presentation/getx/controllers/get_notes_controller.dart';
+import 'package:fin_sight/features/home/presentation/getx/mocks/bindings/home_binding_preview.dart';
+import 'package:fin_sight/features/home/presentation/widgets/note_item.dart';
+import 'package:fin_sight/shared/domain/entities/category_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:get/get_navigation/get_navigation.dart';

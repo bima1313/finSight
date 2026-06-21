@@ -1,4 +1,4 @@
-import 'package:expense_tracker/core/themes/app_theme.dart';
+import 'package:fin_sight/core/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:get/get.dart';

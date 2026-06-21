@@ -1,4 +1,4 @@
-import 'package:expense_tracker/features/history/domain/entities/history.dart';
+import 'package:fin_sight/features/history/domain/entities/history.dart';
 
 class HistoryModel extends History {
   const HistoryModel({

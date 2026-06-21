@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:expense_tracker/shared/utils/datetime_parser.dart';
+import 'package:fin_sight/shared/utils/datetime_parser.dart';
 import 'package:get/get.dart';
 
 class RealTimeController extends GetxController {

@@ -1,6 +1,6 @@
-import 'package:expense_tracker/core/databases/sqlite.dart';
-import 'package:expense_tracker/core/errors/exceptions.dart';
-import 'package:expense_tracker/features/history/data/models/history_model.dart';
+import 'package:fin_sight/core/databases/sqlite.dart';
+import 'package:fin_sight/core/errors/exceptions.dart';
+import 'package:fin_sight/features/history/data/models/history_model.dart';
 import 'package:flutter/foundation.dart';
 
 @immutable

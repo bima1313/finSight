@@ -1,5 +1,5 @@
-import 'package:expense_tracker/features/home/data/models/note_model.dart';
-import 'package:expense_tracker/features/home/domain/entities/note.dart';
+import 'package:fin_sight/features/home/data/models/note_model.dart';
+import 'package:fin_sight/features/home/domain/entities/note.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

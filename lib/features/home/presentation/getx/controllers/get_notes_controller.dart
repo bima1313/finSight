@@ -1,6 +1,6 @@
-import 'package:expense_tracker/features/home/domain/entities/note.dart';
-import 'package:expense_tracker/features/home/domain/usecase/get_notes_usecase.dart';
-import 'package:expense_tracker/features/home/presentation/utils/list_note_extension.dart';
+import 'package:fin_sight/features/home/domain/entities/note.dart';
+import 'package:fin_sight/features/home/domain/usecase/get_notes_usecase.dart';
+import 'package:fin_sight/features/home/presentation/utils/list_note_extension.dart';
 import 'package:get/get.dart';
 
 class GetNotesController extends GetxController with StateMixin<List<Note>> {

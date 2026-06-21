@@ -1,4 +1,4 @@
-import 'package:expense_tracker/app.dart';
+import 'package:fin_sight/app.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 

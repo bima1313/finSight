@@ -1,5 +1,5 @@
-import 'package:expense_tracker/core/errors/failures.dart';
-import 'package:expense_tracker/features/history/domain/repositories/history_repository.dart';
+import 'package:fin_sight/core/errors/failures.dart';
+import 'package:fin_sight/features/history/domain/repositories/history_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
 class GetYearsUsecase {

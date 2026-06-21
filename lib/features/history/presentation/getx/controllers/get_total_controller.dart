@@ -1,4 +1,4 @@
-import 'package:expense_tracker/features/history/domain/usecases/get_total.dart';
+import 'package:fin_sight/features/history/domain/usecases/get_total.dart';
 import 'package:get/get.dart';
 
 class GetTotalController extends GetxController {

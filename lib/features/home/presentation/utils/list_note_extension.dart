@@ -1,4 +1,4 @@
-import 'package:expense_tracker/features/home/domain/entities/note.dart';
+import 'package:fin_sight/features/home/domain/entities/note.dart';
 
 extension ListNoteExtension on List<Note> {
   double get calculateAmount {

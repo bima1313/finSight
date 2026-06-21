@@ -1,8 +1,8 @@
-import 'package:expense_tracker/core/errors/exceptions.dart';
-import 'package:expense_tracker/core/errors/failures.dart';
-import 'package:expense_tracker/features/history/data/datasource/history_local_data_source.dart';
-import 'package:expense_tracker/features/history/domain/entities/history.dart';
-import 'package:expense_tracker/features/history/domain/repositories/history_repository.dart';
+import 'package:fin_sight/core/errors/exceptions.dart';
+import 'package:fin_sight/core/errors/failures.dart';
+import 'package:fin_sight/features/history/data/datasource/history_local_data_source.dart';
+import 'package:fin_sight/features/history/domain/entities/history.dart';
+import 'package:fin_sight/features/history/domain/repositories/history_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
 class HistoryRepositoryImpl implements HistoryRepository {

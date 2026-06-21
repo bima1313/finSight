@@ -1,4 +1,4 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
 @immutable

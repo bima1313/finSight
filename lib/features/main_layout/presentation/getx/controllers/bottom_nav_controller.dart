@@ -1,6 +1,6 @@
-import 'package:expense_tracker/features/history/presentation/getx/controllers/get_total_controller.dart';
-import 'package:expense_tracker/features/history/presentation/getx/controllers/get_years_controller.dart';
-import 'package:expense_tracker/features/history/presentation/getx/controllers/histories_data_controller.dart';
+import 'package:fin_sight/features/history/presentation/getx/controllers/get_total_controller.dart';
+import 'package:fin_sight/features/history/presentation/getx/controllers/get_years_controller.dart';
+import 'package:fin_sight/features/history/presentation/getx/controllers/histories_data_controller.dart';
 import 'package:get/get.dart';
 
 class BottomNavController extends GetxController {

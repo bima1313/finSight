@@ -1,6 +1,6 @@
-import 'package:expense_tracker/features/home/domain/entities/note.dart';
-import 'package:expense_tracker/features/home/domain/usecase/create_note_usecase.dart';
-import 'package:expense_tracker/features/home/presentation/getx/controllers/get_notes_controller.dart';
+import 'package:fin_sight/features/home/domain/entities/note.dart';
+import 'package:fin_sight/features/home/domain/usecase/create_note_usecase.dart';
+import 'package:fin_sight/features/home/presentation/getx/controllers/get_notes_controller.dart';
 import 'package:get/get.dart';
 
 class CreateNoteController extends GetxController {

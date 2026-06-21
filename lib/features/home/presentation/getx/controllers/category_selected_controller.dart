@@ -1,4 +1,4 @@
-import 'package:expense_tracker/shared/domain/entities/category_type.dart';
+import 'package:fin_sight/shared/domain/entities/category_type.dart';
 import 'package:get/get.dart';
 
 class CategorySelectedController extends GetxController {

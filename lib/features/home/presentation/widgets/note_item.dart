@@ -1,6 +1,6 @@
-import 'package:expense_tracker/features/home/presentation/utils/category_ui_mapper.dart';
-import 'package:expense_tracker/shared/domain/entities/category_type.dart';
-import 'package:expense_tracker/shared/utils/datetime_parser.dart';
+import 'package:fin_sight/features/home/presentation/utils/category_ui_mapper.dart';
+import 'package:fin_sight/shared/domain/entities/category_type.dart';
+import 'package:fin_sight/shared/utils/datetime_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:intl/intl.dart';

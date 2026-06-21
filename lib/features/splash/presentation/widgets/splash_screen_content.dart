@@ -1,5 +1,5 @@
-import 'package:expense_tracker/core/themes/app_colors.dart';
-import 'package:expense_tracker/features/splash/presentation/utils/degrees_to_radians.dart';
+import 'package:fin_sight/core/themes/app_colors.dart';
+import 'package:fin_sight/features/splash/presentation/utils/degrees_to_radians.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 

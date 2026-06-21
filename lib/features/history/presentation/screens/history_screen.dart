@@ -1,8 +1,8 @@
-import 'package:expense_tracker/core/themes/app_theme.dart';
-import 'package:expense_tracker/features/history/presentation/getx/controllers/get_total_controller.dart';
-import 'package:expense_tracker/features/history/presentation/getx/mocks/bindings/history_binding_preview.dart';
-import 'package:expense_tracker/features/history/presentation/widgets/chart_data_widget.dart';
-import 'package:expense_tracker/features/history/presentation/widgets/custom_dropdown_menu.dart';
+import 'package:fin_sight/core/themes/app_theme.dart';
+import 'package:fin_sight/features/history/presentation/getx/controllers/get_total_controller.dart';
+import 'package:fin_sight/features/history/presentation/getx/mocks/bindings/history_binding_preview.dart';
+import 'package:fin_sight/features/history/presentation/widgets/chart_data_widget.dart';
+import 'package:fin_sight/features/history/presentation/widgets/custom_dropdown_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:get/get.dart';

@@ -1,5 +1,5 @@
-import 'package:expense_tracker/features/history/domain/entities/history.dart';
-import 'package:expense_tracker/features/history/presentation/utils/month_parser.dart';
+import 'package:fin_sight/features/history/domain/entities/history.dart';
+import 'package:fin_sight/features/history/presentation/utils/month_parser.dart';
 
 String changeRateCalculation({
   required Iterable<History> data,
