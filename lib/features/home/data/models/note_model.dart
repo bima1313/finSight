@@ -14,7 +14,7 @@ class NoteModel extends Note {
       title: json["title"],
       category: json["category"],
       amount: json["amount"],
-      dateTime: json["created_at"],
+      dateTime: DateTime.parse(json["created_at"]),
     );
   }
 
@@ -28,10 +28,10 @@ class NoteModel extends Note {
   }
   Map<String, Object?> toMap() {
     return {
-      "title": title,
-      "amount": amount,
-      "category": category,
-      "created_at": dateTime.formatingDate(),
+      ":title": title,
+      ":amount": amount,
+      ":category": category,
+      ":created_at": dateTime.formatingDate(),
     };
   }
 }

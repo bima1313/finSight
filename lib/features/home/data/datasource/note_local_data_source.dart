@@ -18,26 +18,15 @@ class NoteLocalDataSourceImpl implements NoteLocalDataSource {
     try {
       final db = await dbHelper.getDb();
       final datetimeNow = DateTime.now();
+      final prepare = db.prepare('''
+      SELECT title, amount, category, created_at 
+      FROM expense 
+      WHERE created_at LIKE ? 
+      ORDER BY created_at DESC''');
+      final data = prepare.select(['${datetimeNow.toDbDate()}%']);
+      prepare.close();
 
-      final data = await db.query(
-        'expense',
-        columns: ['title', 'amount', 'category', 'created_at'],
-        where: 'created_at LIKE ?',
-        whereArgs: ['${datetimeNow.toDbDate()}%'],
-        orderBy: 'created_at DESC',
-      );
-      return data.map((json) {
-        /* 
-        convert `created_at` from string into DateTime data type. In the result
-        the data inserting into model including `created_at` DateTime type.
-        */
-        final copyData = Map<String, dynamic>.from(json);
-        copyData.update(
-          'created_at',
-          (value) => DateTime.parse(value.toString()),
-        );
-        return NoteModel.fromJson(copyData);
-      }).toList();
+      return data.map((json) => NoteModel.fromJson(json)).toList();
     } catch (e) {
       throw DatabaseException(message: "can't fetch notes");
     }
@@ -47,7 +36,12 @@ class NoteLocalDataSourceImpl implements NoteLocalDataSource {
   Future<void> createNote({required NoteModel note}) async {
     try {
       final db = await dbHelper.getDb();
-      await db.insert("expense", note.toMap());
+      final prepare = db.prepare(
+        '''INSERT INTO expense (title, amount, category, created_at) 
+        VALUES (:title,:amount,:category,:created_at)''',
+      );
+      prepare.executeWith(note.toMap().toStatementParameters());
+      prepare.close();
     } catch (e) {
       throw DatabaseException(message: "can't save note");
     }

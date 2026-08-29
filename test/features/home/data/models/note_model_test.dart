@@ -18,7 +18,7 @@ void main() {
       "title": "test",
       "category": "transportation",
       "amount": 100.0,
-      "created_at": DateTime(2018, 9, 7, 18, 25, 30),
+      "created_at": "2018-09-07 18:25:30",
     };
 
     final result = NoteModel.fromJson(jsonModel);
@@ -44,10 +44,10 @@ void main() {
   });
   test("Should return a valid map when toMap is called", () {
     final expectedMap = {
-      "title": "test",
-      "category": "transportation",
-      "amount": 100.0,
-      "created_at": "2018-09-07 18:25:30",
+      ":title": "test",
+      ":category": "transportation",
+      ":amount": 100.0,
+      ":created_at": "2018-09-07 18:25:30",
     };
     final result = noteModel.toMap();
 

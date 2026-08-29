@@ -19,6 +19,7 @@ abstract class AppTheme {
           color: AppColors.primary,
           fontWeight: .bold,
         ),
+        iconTheme: IconThemeData(color: AppColors.primary),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: AppColors.primary,

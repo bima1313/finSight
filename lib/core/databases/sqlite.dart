@@ -1,9 +1,10 @@
 import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:sqlite3/sqlite3.dart';
 
 class SQLite {
-  const SQLite({this.dbPath});
-  final String? dbPath;
+  const SQLite({this.overrideDb});
+  final Database? overrideDb;
   static Database? _db;
 
   Future<Database> getDb() async {
@@ -15,26 +16,42 @@ class SQLite {
   }
 
   Future<void> closeDb() async {
-    await _db!.close();
+    _db!.close();
     _db = null;
   }
 
   Future<Database> _initDb() async {
-    _db = await openDatabase(
-      version: 1,
-      dbPath ?? join(await getDatabasesPath(), 'cash_flow_database.db'),
-      onCreate: (db, version) {
-        return db.execute('''CREATE TABLE expense(
+    if (overrideDb != null) {
+      _db = overrideDb;
+    } else {
+      final dbDir = await getApplicationDocumentsDirectory();
+      _db = sqlite3.open(join(dbDir.path, 'cash_flow_database.db'));
+    }
+
+    const targetVersion = 1;
+
+    final result = _db!.select('PRAGMA user_version;');
+    final currentVersion = result.first['user_version'] as int;
+
+    if (currentVersion == 0) {
+      _db!.execute('''CREATE TABLE expense(
           id integer primary key autoincrement not null,
           title text not null,
           amount real not null,
-          category text not null,          
+          category text not null,
           created_at text
           )
           ''');
-      },
-    );
+
+      _db!.execute('PRAGMA user_version = $targetVersion;');
+    }
 
     return _db!;
+  }
+}
+
+extension StatementParametersSqlite on Map<String, Object?> {
+  StatementParameters toStatementParameters() {
+    return StatementParameters.named(this);
   }
 }

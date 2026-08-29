@@ -18,29 +18,18 @@ class HistoryLocalDataSourceImpl implements HistoryLocalDataSource {
   Future<List<HistoryModel>> getHistories({required int year}) async {
     try {
       final db = await dbHelper.getDb();
-      final data = await db.query(
-        'expense',
-        columns: [
-          "sum(amount) as amount",
-          "COUNT(strftime('%m', created_at)) as transactions",
-          "strftime('%m', created_at) as month",
-        ],
-        where: "strftime('%Y', created_at) = ?",
-        whereArgs: ['$year'],
-        groupBy: "month",
-      );
+      final prepare = db.prepare('''
+      SELECT sum(amount) AS amount, COUNT(strftime('%m', created_at)) AS transactions, 
+      strftime('%m', created_at) AS month 
+      FROM expense 
+      WHERE strftime('%Y', created_at) = ? 
+      GROUP BY month''');
+      final data = prepare.select(['$year']);
+      prepare.close();
 
-      return data.map((json) {
-        /*
-        convert `month` from String into integer data type.
-        */
-        final copyData = Map<String, dynamic>.from(json);
-        copyData.update("month", (value) => int.parse(value.toString()));
-
-        return HistoryModel.fromJson(copyData);
-      }).toList();
+      return data.map((json) => HistoryModel.fromJson(json)).toList();
     } catch (e) {
-      throw DatabaseException(message: "can't fetch histories");
+      throw DatabaseException(message: e.toString());
     }
   }
 
@@ -48,13 +37,13 @@ class HistoryLocalDataSourceImpl implements HistoryLocalDataSource {
   Future<double> getTotal({required int year}) async {
     try {
       final db = await dbHelper.getDb();
-
-      final data = await db.query(
-        'expense',
-        columns: ['sum(amount) AS total'],
-        where: "strftime('%Y', created_at) = ?",
-        whereArgs: ['$year'],
-      );
+      final prepare = db.prepare('''
+      SELECT sum(amount) AS total 
+      FROM expense 
+      WHERE strftime('%Y', created_at) = ?
+      ''');
+      final data = prepare.select(['$year']);
+      prepare.close();
 
       return (data.single['total'] as double);
     } catch (e) {
@@ -66,11 +55,11 @@ class HistoryLocalDataSourceImpl implements HistoryLocalDataSource {
   Future<List<int>> getYears() async {
     try {
       final db = await dbHelper.getDb();
-      final data = await db.query(
-        'expense',
-        columns: ["strftime('%Y',created_at) as year"],
-        groupBy: "year",
-      );
+      final data = db.select('''
+      SELECT strftime('%Y',created_at) AS year 
+      FROM expense 
+      GROUP BY year
+      ''');
 
       return data
           .map((element) => int.parse(element['year'] as String))

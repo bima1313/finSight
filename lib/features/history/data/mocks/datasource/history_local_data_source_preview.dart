@@ -17,13 +17,13 @@ class MockHistoryLocalDataSourceImplPreview
   Future<List<HistoryModel>> getHistories({required int year}) async {
     await Future.delayed(const Duration(seconds: 2));
     try {
-      final Map<int, Map<String, dynamic>> historyWrapper = {};
+      final Map<String, Map<String, dynamic>> historyWrapper = {};
 
       for (var item in dummyData["data"]!) {
         final dateTime = DateTime.parse(item["created_at"].toString());
         if (dateTime.year != year) continue;
 
-        final month = dateTime.month;
+        final month = dateTime.month.toString();
         final amount = item["amount"] as num;
 
         // if historyWrapper is exist the data will update, if not do initialization
@@ -41,7 +41,7 @@ class MockHistoryLocalDataSourceImplPreview
           .map((json) => HistoryModel.fromJson(json))
           .toList();
     } catch (e) {
-      throw DatabaseException(message: e.toString());
+      throw DatabaseException(message: "can't fetch histories");
     }
   }
 
@@ -60,7 +60,7 @@ class MockHistoryLocalDataSourceImplPreview
 
       return total;
     } catch (e) {
-      throw DatabaseException(message: e.toString());
+      throw DatabaseException(message: "can't fetch total");
     }
   }
 
@@ -76,7 +76,7 @@ class MockHistoryLocalDataSourceImplPreview
           .toSet()
           .toList();
     } catch (e) {
-      throw DatabaseException(message: e.toString());
+      throw DatabaseException(message: "Can't fetch history years");
     }
   }
 }

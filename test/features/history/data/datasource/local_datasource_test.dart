@@ -4,25 +4,15 @@ import 'package:fin_sight/features/history/data/datasource/history_local_data_so
 import 'package:fin_sight/features/home/data/datasource/note_local_data_source.dart';
 import 'package:fin_sight/features/home/data/models/note_model.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart'
-    show
-        sqfliteFfiInit,
-        databaseFactory,
-        databaseFactoryFfi,
-        inMemoryDatabasePath;
+import 'package:sqlite3/sqlite3.dart';
 
 void main() {
-  setUpAll(() {
-    sqfliteFfiInit();
-    databaseFactory = databaseFactoryFfi;
-  });
-
   group('local datasource tests', () {
     late SQLite db;
     late HistoryLocalDataSourceImpl historyLocalDataSource;
     late NoteLocalDataSourceImpl noteLocalDataSource;
     setUp(() async {
-      db = SQLite(dbPath: inMemoryDatabasePath);
+      db = SQLite(overrideDb: sqlite3.openInMemory());
       historyLocalDataSource = HistoryLocalDataSourceImpl(dbHelper: db);
       noteLocalDataSource = NoteLocalDataSourceImpl(dbHelper: db);
     });

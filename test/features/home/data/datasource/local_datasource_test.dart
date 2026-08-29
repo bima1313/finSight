@@ -2,19 +2,15 @@ import 'package:fin_sight/core/databases/sqlite.dart';
 import 'package:fin_sight/features/home/data/datasource/note_local_data_source.dart';
 import 'package:fin_sight/features/home/data/models/note_model.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:sqlite3/sqlite3.dart';
 
 void main() {
-  final dummyDateTime = DateTime(2026, 05, 23, 12, 20, 30);
-  setUpAll(() {
-    sqfliteFfiInit();
-    databaseFactory = databaseFactoryFfi;
-  });
+  final dummyDateTime = DateTime(2026, 08, 29, 16, 38);
   group("Note local datasouce test", () {
     late SQLite db;
     late NoteLocalDataSourceImpl localDataSourceImpl;
     setUp(() async {
-      db = SQLite(dbPath: inMemoryDatabasePath);
+      db = SQLite(overrideDb: sqlite3.openInMemory());
       localDataSourceImpl = NoteLocalDataSourceImpl(dbHelper: db);
     });
     tearDown(() async => await db.closeDb());

@@ -11,7 +11,7 @@ class HistoryModel extends History {
     return HistoryModel(
       total: json["amount"],
       transactions: json["transactions"],
-      month: json["month"],
+      month: int.parse(json["month"]),
     );
   }
 }

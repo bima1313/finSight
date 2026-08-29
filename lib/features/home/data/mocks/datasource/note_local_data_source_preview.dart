@@ -15,15 +15,9 @@ class MockNoteLocalDataSourceImplPreview implements NoteLocalDataSourcePreview {
   Future<List<NoteModel>> getNotes() async {
     await Future.delayed(const Duration(seconds: 2));
     try {
-      final data = dummyData["data"]!.map((json) {
-        final copyData = Map<String, dynamic>.from(json);
-        copyData.update(
-          'created_at',
-          (value) => DateTime.parse(value.toString()),
-        );
-        return NoteModel.fromJson(copyData);
-      }).toList();
-
+      final data = dummyData["data"]!
+          .map((json) => NoteModel.fromJson(json))
+          .toList();
       return data;
     } catch (e) {
       throw DatabaseException(message: "Can't Fetch Data");
