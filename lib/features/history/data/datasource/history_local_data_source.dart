@@ -29,7 +29,7 @@ class HistoryLocalDataSourceImpl implements HistoryLocalDataSource {
 
       return data.map((json) => HistoryModel.fromJson(json)).toList();
     } catch (e) {
-      throw DatabaseException(message: e.toString());
+      throw DatabaseException(message: "can't fetch histories");
     }
   }
 
