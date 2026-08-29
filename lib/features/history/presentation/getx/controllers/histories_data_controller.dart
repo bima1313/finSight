@@ -15,7 +15,7 @@ class HistoriesDataController extends GetxController
     data.fold((failure) => change(null, status: .error(failure.message)), (
       data,
     ) {
-      if (data.length <= 1) {
+      if (data.isEmpty) {
         change(null, status: .empty());
       } else {
         change(data, status: .success());

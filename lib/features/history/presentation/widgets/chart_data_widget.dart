@@ -23,7 +23,7 @@ class ChartDataWidget extends GetView<HistoriesDataController> {
     return controller.obx(
       onEmpty: const Center(
         child: Text(
-          "At least 2 months of data are required to display the chart.",
+          "History is empty",
           style: TextStyle(
             fontSize: 14.0,
             fontWeight: .w600,
@@ -69,6 +69,7 @@ class ChartDataWidget extends GetView<HistoriesDataController> {
               ),
             ),
             ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: historiesFromNew.length,
               itemBuilder: (context, index) {

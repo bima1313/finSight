@@ -1,6 +1,7 @@
 import 'package:fin_sight/core/themes/app_colors.dart';
 import 'package:fin_sight/core/themes/app_theme.dart';
 import 'package:fin_sight/features/history/domain/entities/history.dart';
+import 'package:fin_sight/features/history/presentation/utils/get_monthly_spots.dart';
 import 'package:fin_sight/features/history/presentation/utils/month_parser.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -123,12 +124,7 @@ class Chart extends StatelessWidget {
                             ],
                           ),
                         ),
-                        spots: data.map<FlSpot>((element) {
-                          return FlSpot(
-                            element.month.toDouble(),
-                            element.total,
-                          );
-                        }).toList(),
+                        spots: getMonthlySpots(data: data),
                       ),
                     ],
                   ),
