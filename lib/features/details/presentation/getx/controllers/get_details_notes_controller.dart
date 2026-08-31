@@ -1,6 +1,6 @@
 import 'package:fin_sight/features/details/domain/entities/details_notes.dart';
 import 'package:fin_sight/features/details/domain/usecase/get_details_notes_usecase.dart';
-import 'package:fin_sight/features/details/presentation/utils/list_note_extension.dart';
+import 'package:fin_sight/shared/utils/list_note_extension.dart';
 import 'package:fin_sight/shared/utils/datetime_parser.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +24,7 @@ class GetDetailsNotesController extends GetxController
         if (data.isEmpty) {
           change(null, status: .empty());
         } else {
-          _totalAmount.value = data.calculateAmount;
+          _totalAmount.value = data.calculateAmount((item) => item.amount);
           change(data, status: .success());
         }
       },
