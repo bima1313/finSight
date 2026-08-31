@@ -37,7 +37,10 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: .bold,
                     ),
                   ),
-                  TextButton(child: const Text("View All"), onPressed: () {}),
+                  TextButton(
+                    child: const Text("View All"),
+                    onPressed: () => Get.toNamed('/details'),
+                  ),
                 ],
               ),
               const NoteList(),

@@ -12,76 +12,75 @@ class CustomCard extends StatelessWidget {
     required this.description,
     required this.amount,
     required this.changeRate,
+    required this.onPressed,
   });
   final String title;
   final String description;
   final String amount;
   final String changeRate;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const .all(16.0),
-        child: Column(
-          crossAxisAlignment: .start,
-          mainAxisSize: .min,
-          children: [
-            Row(
-              spacing: 24.0,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 218, 217, 217),
-                    borderRadius: .all(.circular(32.0)),
-                  ),
-                  child: Padding(
-                    padding: const .all(10.0),
-                    child: const Center(
-                      child: Icon(
-                        Icons.calendar_month,
-                        color: AppColors.primary,
+    return InkWell(
+      onTap: onPressed,
+      child: Card(
+        child: Padding(
+          padding: const .all(16.0),
+          child: Column(
+            crossAxisAlignment: .start,
+            mainAxisSize: .min,
+            children: [
+              Row(
+                spacing: 24.0,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 218, 217, 217),
+                      borderRadius: .all(.circular(32.0)),
+                    ),
+                    child: Padding(
+                      padding: const .all(10.0),
+                      child: const Center(
+                        child: Icon(
+                          Icons.calendar_month,
+                          color: AppColors.primary,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Column(
-                  crossAxisAlignment: .start,
-                  children: [
-                    Text(
-                      title,
-                      style: Theme.of(context).textTheme.headlineSmall
-                          ?.copyWith(
-                            fontSize: 22.0,
-                            color: Colors.black,
-                            fontWeight: .bold,
-                          ),
-                    ),
-                    Text(description),
-                  ],
-                ),
-              ],
-            ),
-            Padding(
-              padding: const .only(top: 16.0),
-              child: Text(
-                amount,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Colors.black,
-                  fontWeight: .bold,
+                  Column(
+                    crossAxisAlignment: .start,
+                    children: [
+                      Text(
+                        title,
+                        style: Theme.of(context).textTheme.headlineSmall
+                            ?.copyWith(
+                              fontSize: 22.0,
+                              color: Colors.black,
+                              fontWeight: .bold,
+                            ),
+                      ),
+                      Text(description),
+                    ],
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const .only(top: 16.0),
+                child: Text(
+                  amount,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: Colors.black,
+                    fontWeight: .bold,
+                  ),
                 ),
               ),
-            ),
-            Row(
-              spacing: 8.0,
-              children: [
-                changeRate.setChangeRateIcon,
-                // changeRate.contains("-")
-                //     ? const Icon(Icons.trending_down, color: Colors.red)
-                //     : const Icon(Icons.trending_up, color: Colors.green),
-                Text(changeRate),
-              ],
-            ),
-          ],
+              Row(
+                spacing: 8.0,
+                children: [changeRate.setChangeRateIcon, Text(changeRate)],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -100,6 +99,7 @@ Widget chartWidgetPreview() {
       description: "142 Transactions",
       amount: currency.format(8120),
       changeRate: "-4.2% from Nov",
+      onPressed: () {},
     ),
   );
 }

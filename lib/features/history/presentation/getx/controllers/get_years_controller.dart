@@ -6,6 +6,9 @@ class GetYearsController extends GetxController {
 
   GetYearsController({required this.getYearsUsecase});
   List<int> years = [DateTime.now().year];
+  final RxInt _selectedYear = DateTime.now().year.obs;
+  set setSelectedYear(int value) => _selectedYear.value = value;
+  int get selectedYear => _selectedYear.value;
 
   Future<void> getYears() async {
     final data = await getYearsUsecase();

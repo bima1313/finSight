@@ -50,9 +50,10 @@ class CustomDropdownMenu extends StatelessWidget {
             );
           }).toList(),
           onSelected: (value) {
-            final controller = Get.find<HistoriesDataController>();
+            final historiesController = Get.find<HistoriesDataController>();
             final totalController = Get.find<GetTotalController>();
-            controller.getData(year: value);
+            controller.setSelectedYear = value;
+            historiesController.getData(year: value);
             totalController.getTotal(year: value);
           },
         );

@@ -1,4 +1,6 @@
 import 'package:fin_sight/core/themes/app_theme.dart';
+import 'package:fin_sight/features/details/presentation/getx/bindings/details_binding.dart';
+import 'package:fin_sight/features/details/presentation/screens/details_screen.dart';
 import 'package:fin_sight/features/history/presentation/getx/bindings/history_binding.dart';
 import 'package:fin_sight/features/home/presentation/getx/bindings/home_binding.dart';
 import 'package:fin_sight/features/main_layout/presentation/getx/bindings/main_binding.dart';
@@ -26,6 +28,11 @@ class App extends StatelessWidget {
           bindings: [MainBinding(), HomeBinding(), HistoryBinding()],
         ),
         GetPage(name: '/splash-screen', page: () => const SplashScreen()),
+        GetPage(
+          name: '/details',
+          page: () => const DetailsScreen(),
+          binding: DetailsBinding(),
+        ),
       ],
     );
   }
