@@ -1,4 +1,4 @@
-import 'package:fin_sight/features/home/domain/entities/note.dart';
+import 'package:fin_sight/shared/domain/entities/note.dart';
 
 extension ListNoteExtension on List<Note> {
   double get calculateAmount {

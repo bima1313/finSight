@@ -1,4 +1,4 @@
-import 'package:fin_sight/features/home/domain/entities/note.dart';
+import 'package:fin_sight/shared/domain/entities/note.dart';
 import 'package:fin_sight/shared/utils/datetime_parser.dart';
 
 class NoteModel extends Note {
@@ -8,6 +8,15 @@ class NoteModel extends Note {
     required super.amount,
     required super.dateTime,
   });
+
+  factory NoteModel.fromList(List<dynamic> list) {
+    return NoteModel(
+      title: list[0],
+      amount: list[1],
+      category: list[2],
+      dateTime: DateTime.parse(list[3]),
+    );
+  }
 
   factory NoteModel.fromJson(Map<String, dynamic> json) {
     return NoteModel(

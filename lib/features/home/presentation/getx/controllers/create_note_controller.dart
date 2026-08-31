@@ -1,4 +1,4 @@
-import 'package:fin_sight/features/home/domain/entities/note.dart';
+import 'package:fin_sight/shared/domain/entities/note.dart';
 import 'package:fin_sight/features/home/domain/usecase/create_note_usecase.dart';
 import 'package:fin_sight/features/home/presentation/getx/controllers/get_notes_controller.dart';
 import 'package:get/get.dart';

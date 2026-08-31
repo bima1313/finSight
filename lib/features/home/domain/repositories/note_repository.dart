@@ -1,5 +1,5 @@
 import 'package:fin_sight/core/errors/failures.dart';
-import 'package:fin_sight/features/home/domain/entities/note.dart';
+import 'package:fin_sight/shared/domain/entities/note.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 

@@ -1,6 +1,6 @@
 import 'package:fin_sight/core/databases/sqlite.dart';
 import 'package:fin_sight/core/errors/exceptions.dart';
-import 'package:fin_sight/features/home/data/models/note_model.dart';
+import 'package:fin_sight/shared/data/models/note_model.dart';
 import 'package:fin_sight/shared/utils/datetime_parser.dart';
 import 'package:flutter/foundation.dart';
 
@@ -14,10 +14,10 @@ class NoteLocalDataSourceImpl implements NoteLocalDataSource {
   final SQLite dbHelper;
   const NoteLocalDataSourceImpl({required this.dbHelper});
   @override
-  Future<List<NoteModel>> getNotes() async {
+  Future<List<NoteModel>> getNotes({DateTime? datetime}) async {
     try {
       final db = await dbHelper.getDb();
-      final datetimeNow = DateTime.now();
+      final datetimeNow = datetime ?? DateTime.now();
       final prepare = db.prepare('''
       SELECT title, amount, category, created_at 
       FROM expense 
